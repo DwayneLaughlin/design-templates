@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// THIS WILL CREATE THE NAVIGATION TEMPLATE FOR THE HEADER. USING NAVLINK INSTEAD OF AN ANCHOR ELEMENT MAKES SURE THAT THE PAGE DOESN'T REALOAD WHEN LINKS ARE CLICKED.
 const Header = () => {
     return (
         <header>
