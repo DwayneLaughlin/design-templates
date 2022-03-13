@@ -19,12 +19,12 @@ const BookForm = (props) => {
     event.preventDefault();
     const values = [bookname, author, price, quantity];
     let errorMsg = '';
-
+// EVERY() METHOD CHECKS FOR EVERY ITEM IN THE VALUES ARRAY. IT CHECKS WHETHER A FUNCTION IS TRUE FOR EACH ELEMENT IN THE ARRAY. IN THIS CASE IT IS CHECKING TO MAKE SURE THAT EACH PART OF THE FORM IS NOT A 0 OR THAT IT HAS NOT BEEN LEFT BLANK. 
     const allFieldsFilled = values.every((field) => {
       const value = `${field}`.trim();
       return value !== '' && value !== '0';
     });
-
+// IF THE EVERY() METHOD RETURNS TRUE FOR EACH OF THE ITEMS IN THE VALUES ARRAY IT WILL EXECUTE THIS CODE. THE UUIDV4 METHOD CREATES A UNIQUE ID FOR EACH ITEM ADDED TO THE FORM. 
     if (allFieldsFilled) {
       const book = {
         id: uuidv4(),
@@ -40,7 +40,7 @@ const BookForm = (props) => {
     }
     setErrorMsg(errorMsg);
   };
-
+//  HANDLES CHANGES IN INPUTS FOR QUANTITY AND PRICE IN THE FORM. ENTERING INFORMATION INTO THE QUANTITY FIELD CAUSES FIRST SWITCH CASE TO TEST FOR WHETHER OR NOT AN INTEGER HAS BEEN ENTERED INTO THE FIELD. CODE WILL NOT EXECUTE FOR A DECIMAL OR NEGATIVE NUMBER.
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     switch (name) {
@@ -52,6 +52,7 @@ const BookForm = (props) => {
           }));
         }
         break;
+//SECOND CASE CHECKS FOR PRICE. IT WILL ONLY WORK WITH A NUMBER THAT HAS 2 DIGITS AFTER THE DECIMAL. value.match(/^\d{1,}(\.\d{0,2})?$/) IS USED TO CHECK FOR THAT. 
       case 'price':
         if (value === '' || value.match(/^\d{1,}(\.\d{0,2})?$/)) {
           setBook((prevState) => ({
@@ -67,7 +68,7 @@ const BookForm = (props) => {
         }));
     }
   };
-//   
+// THIS RETURNS THE FORM WHERE BOOK INFO GETS ENTERED. 
   return (
     <div className="main-form">
       {errorMsg && <p className="errorMsg">{errorMsg}</p>}
