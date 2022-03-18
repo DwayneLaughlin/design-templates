@@ -22,7 +22,7 @@ return(
       // onChange has to be in here to allow for writing in the form field
       onChange={(e) => setName(e.target.value)}>
       </input>
-
+    <br></br>
 
       <select 
       value={check}
@@ -32,6 +32,7 @@ return(
         <option value ="thing-3">thing 3</option>    
       </select>
       <button>submit</button>
+     
     </form>
     <p>this is your input: {name}</p>
     <p>this is your selection: { check }</p>
