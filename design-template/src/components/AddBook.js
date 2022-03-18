@@ -1,20 +1,16 @@
-import React from "react";
-import BookForm from './BookForm'
+import React from 'react';
+import BookForm from './BookForm';
 
 const AddBook = () => {
-    const handleOnSubmit = (book) => {
-        console.log(book);
-    };
+  const handleOnSubmit = (book) => {
+    console.log(book);
+  };
 
-    return (
-        <div>
-        <React.Fragment>
-            <BookForm handleOnSubmit = {handleOnSubmit} />
-        </React.Fragment>
-        <p>hwy</p>
-        </div>
-       
-    );
+  return (
+    <React.Fragment>
+      <BookForm handleOnSubmit={handleOnSubmit} />
+    </React.Fragment>
+  );
 };
 
 export default AddBook;
