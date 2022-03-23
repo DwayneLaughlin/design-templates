@@ -17,6 +17,8 @@ const Header = () => {
                 <NavLink to="/add" className="link" activeClassName="active">
                     Add a Book
                 </NavLink>
+
+                <NavLink to="/email" className="link" activeClassName="active">Email</NavLink>
             </div>
         </header>
     )
