@@ -14,6 +14,7 @@ const EmailForm = () => {
               
           });
           e.target.reset()
+          alert ("Your message has been sent. We will reply to you shortly")
       };
     
       return (
